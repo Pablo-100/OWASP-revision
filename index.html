@@ -1,0 +1,515 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OWASP Academy - Revision fun et complete</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="topnav container">
+      <a class="brand" href="#top">OWASP GameClass</a>
+      <div class="nav-links">
+        <a href="#chap1">Chap 1</a>
+        <a href="#chap2">Chap 2</a>
+        <a href="#revision">Revision</a>
+        <a href="#games">Mini Jeux</a>
+        <a href="#megaquiz">Mega QCM</a>
+        <a href="#exam">Exam Mode</a>
+        <button id="theme-toggle" class="theme-toggle" type="button">Dark</button>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow">Mode revision 20/20</p>
+      <h1>Ta plateforme OWASP: comprendre, jouer, retenir, performer</h1>
+      <p class="lead">
+        Site complet base sur les 2 chapitres PDF: explication ultra simple,
+        cartes memoire, mini-jeux, quiz corrige, simulateur d exam, et suivi de progression.
+      </p>
+      <div class="hero-tags">
+        <span>Debutant -> avance</span>
+        <span>Top 10 OWASP 2021</span>
+        <span>XP + Progression</span>
+        <span>Apprendre en jouant</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container logo-strip">
+      <article class="card logos-card">
+        <h2>RepÃ¨res visuels rapides</h2>
+        <div class="logos-grid">
+          <figure>
+            <img src="https://owasp.org/assets/images/logo.png" alt="OWASP Logo">
+            <figcaption>OWASP</figcaption>
+          </figure>
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/HTTP_logo.svg" alt="HTTP Logo">
+            <figcaption>HTTP</figcaption>
+          </figure>
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Lock-green.svg" alt="Security lock">
+            <figcaption>Crypto</figcaption>
+          </figure>
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/OOjs_UI_icon_alert.svg" alt="Alert icon">
+            <figcaption>Risk Alert</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section class="container dashboard" id="revision">
+      <article class="card score-card">
+        <h2>Tableau de bord</h2>
+        <div class="score-grid">
+          <div>
+            <p class="score-label">XP</p>
+            <p id="xp-value" class="score-value">0</p>
+          </div>
+          <div>
+            <p class="score-label">Niveau</p>
+            <p id="level-value" class="score-value">1</p>
+          </div>
+          <div>
+            <p class="score-label">Progression</p>
+            <p id="progress-value" class="score-value">0%</p>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <button id="reset-all" class="btn btn-ghost" type="button">Reset progression</button>
+      </article>
+
+      <article class="card roadmap-card">
+        <h2>Parcours revision smart</h2>
+        <div class="checklist">
+          <label><input class="task-check" type="checkbox" data-task="t1"> Comprendre HTTP + SOP</label>
+          <label><input class="task-check" type="checkbox" data-task="t2"> Maitriser A01-A03</label>
+          <label><input class="task-check" type="checkbox" data-task="t3"> Maitriser A04-A07</label>
+          <label><input class="task-check" type="checkbox" data-task="t4"> Maitriser A08-A10</label>
+          <label><input class="task-check" type="checkbox" data-task="t5"> Finir Flashcards</label>
+          <label><input class="task-check" type="checkbox" data-task="t6"> Faire Mini-jeux</label>
+          <label><input class="task-check" type="checkbox" data-task="t7"> Passer Exam Mode</label>
+        </div>
+      </article>
+    </section>
+
+    <section class="container" id="chap1">
+      <div class="section-head">
+        <p class="eyebrow">Chapitre 1</p>
+        <h2>Fondations expliquees comme pour debutant</h2>
+      </div>
+
+      <div class="two-col">
+        <article class="card">
+          <h3>1) OWASP en mots simples</h3>
+          <p>
+            Imagine OWASP comme un coach securite web. Il te dit:
+            "voici les failles les plus frequentes, et comment ne pas tomber dedans".
+          </p>
+          <ul>
+            <li>Prevalence: combien cette faille existe.</li>
+            <li>Exploitabilite: facilite pour hacker.</li>
+            <li>Impact: degats techniques + business.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>2) HTTP = langage client/serveur</h3>
+          <div class="code-box">
+            <code>GET /profile HTTP/1.1</code>
+            <code>Host: app.site.com</code>
+            <code>Cookie: session=abc123</code>
+          </div>
+          <p class="muted">
+            Si l app ne valide pas bien les entrees ou les droits, la porte est ouverte.
+          </p>
+        </article>
+      </div>
+
+      <article class="card tounsi-card">
+        <h3>Tafsir b tounsi - Chapitre 1</h3>
+        <p>
+          <strong>Bel simple:</strong> el navigateur w serveur y7kiw b HTTP. Kol request ÙÙŠÙ‡Ø§ infos (method, host, cookies).
+          Ken app ma ta3milch verification s7i7a, hacker ynajjem yetsarref fi system kifou kif user vrai.
+        </p>
+        <p>
+          <strong>SOP ki guard:</strong> y9oul "site A ma ynajjemch y9ra data mta3 site B" ken ma famech nafs protocole+hote+port.
+          Houni tfhem 3leh XSS w CSRF Ø®Ø·ÙŠØ±ÙŠÙ† ÙƒÙŠ policy tetsed3.
+        </p>
+      </article>
+
+      <article class="card diagram-card">
+        <h3>Diagramme - Cycle Request/Response expliquÃ©</h3>
+        <svg viewBox="0 0 980 220" role="img" aria-label="Cycle HTTP et contrÃ´le sÃ©curitÃ©">
+          <defs>
+            <marker id="arr1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+              <polygon points="0 0, 10 4, 0 8" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <g class="diagram">
+            <rect x="30" y="45" width="170" height="60" rx="12"></rect>
+            <text x="115" y="80" text-anchor="middle">Client Browser</text>
+            <line x1="200" y1="75" x2="300" y2="75" marker-end="url(#arr1)"></line>
+            <rect x="300" y="45" width="180" height="60" rx="12"></rect>
+            <text x="390" y="80" text-anchor="middle">Web App</text>
+            <line x1="480" y1="75" x2="580" y2="75" marker-end="url(#arr1)"></line>
+            <rect x="580" y="45" width="180" height="60" rx="12"></rect>
+            <text x="670" y="80" text-anchor="middle">Database</text>
+            <rect x="300" y="135" width="280" height="55" rx="12"></rect>
+            <text x="440" y="167" text-anchor="middle">Security checks: auth + validation + logging</text>
+          </g>
+        </svg>
+      </article>
+
+      <article class="card">
+        <h3>3) SOP (Same-Origin Policy)</h3>
+        <p>
+          Regle navigateur: un script d un site ne lit pas facilement les donnees d un autre site,
+          sauf si protocole + hote + port sont identiques.
+        </p>
+        <div class="sop-grid">
+          <div class="ok">http://a.com/x + http://a.com/y = OK</div>
+          <div class="ko">http://a.com + https://a.com = KO (protocole)</div>
+          <div class="ko">http://a.com + http://api.a.com = KO (hote)</div>
+          <div class="ko">http://a.com + http://a.com:8080 = KO (port)</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>4) Tests securite (White / Black / Grey)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Comme un jeu</th>
+                <th>Avantage</th>
+                <th>Limite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>White box</td>
+                <td>Tu vois la map complete</td>
+                <td>Tu detectes beaucoup de details</td>
+                <td>Moins realiste attaquant externe</td>
+              </tr>
+              <tr>
+                <td>Black box</td>
+                <td>Tu joues sans carte</td>
+                <td>Tres realiste</td>
+                <td>Peut rater des failles internes</td>
+              </tr>
+              <tr>
+                <td>Grey box</td>
+                <td>Tu as des indices</td>
+                <td>Bon compromis</td>
+                <td>Depend des infos fournies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="container" id="chap2">
+      <div class="section-head">
+        <p class="eyebrow">Chapitre 2</p>
+        <h2>Top 10 OWASP 2021 en mode ultra clair</h2>
+      </div>
+
+      <div class="filters">
+        <button class="chip active" data-filter="all">Tout</button>
+        <button class="chip" data-filter="access">Acces</button>
+        <button class="chip" data-filter="crypto">Crypto</button>
+        <button class="chip" data-filter="injection">Injection</button>
+        <button class="chip" data-filter="design">Design</button>
+        <button class="chip" data-filter="auth">Auth</button>
+        <button class="chip" data-filter="integrity">Integrite</button>
+      </div>
+
+      <div class="vuln-grid">
+        <article class="card vuln" data-group="access">
+          <h3>A01 Broken Access Control</h3>
+          <p><strong>Scene:</strong> tu changes un id URL et tu vois les donnees d un autre user.</p>
+          <p><strong>Fix:</strong> verifier droits cote serveur sur chaque action.</p>
+        </article>
+
+        <article class="card vuln" data-group="crypto">
+          <h3>A02 Cryptographic Failures</h3>
+          <p><strong>Scene:</strong> mot de passe mal stocke, trafic non protege.</p>
+          <p><strong>Fix:</strong> TLS fort, hash sale fort, gestion cle stricte.</p>
+        </article>
+
+        <article class="card vuln" data-group="injection">
+          <h3>A03 Injection (SQL/XSS/Command)</h3>
+          <p><strong>Scene:</strong> entree user executee comme commande.</p>
+          <p><strong>Fix:</strong> requetes preparees, validation allowlist, encoding sortie.</p>
+        </article>
+
+        <article class="card vuln" data-group="design">
+          <h3>A04 Insecure Design</h3>
+          <p><strong>Scene:</strong> process metier faible des la conception.</p>
+          <p><strong>Fix:</strong> threat modeling + abuse cases avant dev.</p>
+        </article>
+
+        <article class="card vuln" data-group="design">
+          <h3>A05 Security Misconfiguration</h3>
+          <p><strong>Scene:</strong> comptes par defaut, debug actif, directory listing.</p>
+          <p><strong>Fix:</strong> hardening + secure defaults + secrets propres.</p>
+        </article>
+
+        <article class="card vuln" data-group="design">
+          <h3>A06 Vulnerable Components</h3>
+          <p><strong>Scene:</strong> dependance obsolete exploitee (ex Log4j style).</p>
+          <p><strong>Fix:</strong> inventaire + scan + patch rapide.</p>
+        </article>
+
+        <article class="card vuln" data-group="auth">
+          <h3>A07 Auth Failures</h3>
+          <p><strong>Scene:</strong> session fixation, brute force, mots de passe faibles.</p>
+          <p><strong>Fix:</strong> MFA, rate limit, timeout, regen session id.</p>
+        </article>
+
+        <article class="card vuln" data-group="integrity">
+          <h3>A08 Software/Data Integrity Failures</h3>
+          <p><strong>Scene:</strong> update non signee ou source non fiable.</p>
+          <p><strong>Fix:</strong> signatures, pipeline CI/CD securisee.</p>
+        </article>
+
+        <article class="card vuln" data-group="integrity">
+          <h3>A09 Logging & Monitoring Failures</h3>
+          <p><strong>Scene:</strong> attaque detectee apres des mois.</p>
+          <p><strong>Fix:</strong> logs utiles, SIEM, alerting, plan incident.</p>
+        </article>
+
+        <article class="card vuln" data-group="integrity">
+          <h3>A10 SSRF</h3>
+          <p><strong>Scene:</strong> ton serveur appelle un endpoint interne dangereux.</p>
+          <p><strong>Fix:</strong> URL allowlist + blocage egress interne + validation DNS/IP.</p>
+        </article>
+      </div>
+
+      <article class="card tounsi-card">
+        <h3>Tafsir b tounsi - Chapitre 2 (Top 10)</h3>
+        <p>
+          <strong>Fekra kbira:</strong> kol faille fi Top 10 Ù‡ÙŠ Ø¨Ø§Ø¨. Attaquant ylawwej 3la ashel beb:
+          access control m3awaj, input validation Ø¶Ø¹ÙŠÙØ©, ÙˆÙ„Ø§ config khayba.
+        </p>
+        <p>
+          <strong>Rule dhahbiya:</strong> "ma tethi9 fi hata input", "a3mel least privilege",
+          "log kol event mouhem", "patch dependances bistorbe7".
+          Hekk tn9es surface d attaque bchkl kbir.
+        </p>
+      </article>
+
+      <article class="card diagram-card">
+        <h3>Diagramme - OWASP Top 10 Mind Map</h3>
+        <svg viewBox="0 0 980 280" role="img" aria-label="Mind map OWASP Top 10">
+          <g class="diagram">
+            <rect x="395" y="110" width="190" height="60" rx="14"></rect>
+            <text x="490" y="146" text-anchor="middle">OWASP Top 10</text>
+
+            <rect x="90" y="35" width="170" height="45" rx="10"></rect>
+            <text x="175" y="63" text-anchor="middle">A01 Access</text>
+            <rect x="300" y="20" width="170" height="45" rx="10"></rect>
+            <text x="385" y="48" text-anchor="middle">A02 Crypto</text>
+            <rect x="510" y="20" width="170" height="45" rx="10"></rect>
+            <text x="595" y="48" text-anchor="middle">A03 Injection</text>
+            <rect x="720" y="35" width="170" height="45" rx="10"></rect>
+            <text x="805" y="63" text-anchor="middle">A04 Design</text>
+
+            <rect x="90" y="205" width="170" height="45" rx="10"></rect>
+            <text x="175" y="233" text-anchor="middle">A05 Config</text>
+            <rect x="300" y="220" width="170" height="45" rx="10"></rect>
+            <text x="385" y="248" text-anchor="middle">A06 Components</text>
+            <rect x="510" y="220" width="170" height="45" rx="10"></rect>
+            <text x="595" y="248" text-anchor="middle">A07 Auth</text>
+            <rect x="720" y="205" width="170" height="45" rx="10"></rect>
+            <text x="805" y="233" text-anchor="middle">A08/A09/A10</text>
+          </g>
+        </svg>
+      </article>
+    </section>
+
+    <section class="container" id="deepdive">
+      <div class="section-head">
+        <p class="eyebrow">Descriptions avancees</p>
+        <h2>Comprendre "kl chy": pourquoi, comment, impact, correction</h2>
+      </div>
+      <div class="two-col">
+        <details class="card" open>
+          <summary>A01-A03 (Acces, Crypto, Injection)</summary>
+          <ul>
+            <li><strong>A01:</strong> la logique d autorisation doit etre verifiee sur chaque endpoint, pas juste en UI.</li>
+            <li><strong>A02:</strong> la crypto faible transforme une fuite en compromission massive.</li>
+            <li><strong>A03:</strong> toute entree non maitrisee peut devenir commande interpretee.</li>
+            <li><strong>Pattern defense:</strong> deny-by-default, prepared statements, secrets management.</li>
+          </ul>
+        </details>
+        <details class="card" open>
+          <summary>A04-A07 (Design, Config, Components, Auth)</summary>
+          <ul>
+            <li><strong>A04:</strong> un mauvais design n est pas patchable facilement sans refonte.</li>
+            <li><strong>A05:</strong> les defaults non modifies sont une porte directe.</li>
+            <li><strong>A06:</strong> dependance obsolete = faille heritee, meme si ton code est propre.</li>
+            <li><strong>A07:</strong> identite + session mal gerees = account takeover.</li>
+          </ul>
+        </details>
+      </div>
+      <details class="card" open>
+        <summary>A08-A10 (Integrite, Monitoring, SSRF)</summary>
+        <ul>
+          <li><strong>A08:</strong> sans verification integrite, la chaine de livraison logiciel devient vecteur d attaque.</li>
+          <li><strong>A09:</strong> si tu ne vois rien dans les logs, l attaquant peut rester longtemps.</li>
+          <li><strong>A10:</strong> SSRF permet de pivoter vers reseau interne et metadata cloud.</li>
+          <li><strong>Pattern defense:</strong> signatures, SIEM/alerting, egress control, URL allowlist.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="container flashcards" id="games">
+      <div class="section-head">
+        <p class="eyebrow">Mode ludique</p>
+        <h2>Flashcards + mini jeux revision</h2>
+      </div>
+
+      <div class="flash-grid">
+        <button class="flash card" data-front="A01 ?" data-back="Broken Access Control: verifier authorization cote serveur."></button>
+        <button class="flash card" data-front="A02 ?" data-back="Cryptographic Failures: TLS + hash sale fort + gestion cle."></button>
+        <button class="flash card" data-front="A03 ?" data-back="Injection: requetes preparees + validation + encoding sortie."></button>
+        <button class="flash card" data-front="A10 ?" data-back="SSRF: allowlist URL + blocage acces interne."></button>
+      </div>
+
+      <div class="two-col">
+        <article class="card">
+          <h3>Mini-jeu 1: Vrai ou Faux Blitz</h3>
+          <p id="vf-question">Question: HTTPS suffit seul pour securiser toute l application.</p>
+          <div class="btn-row">
+            <button class="btn" id="vf-true" type="button">Vrai</button>
+            <button class="btn btn-ghost" id="vf-false" type="button">Faux</button>
+          </div>
+          <p id="vf-result" class="muted"></p>
+        </article>
+
+        <article class="card">
+          <h3>Mini-jeu 2: Match rapide</h3>
+          <p>Choisis la bonne defense pour la faille affichee.</p>
+          <p id="match-prompt" class="prompt">Faille: A03 Injection</p>
+          <div class="btn-row">
+            <button class="btn match-option" type="button" data-correct="yes">Requetes preparees</button>
+            <button class="btn btn-ghost match-option" type="button" data-correct="no">Desactiver JavaScript client</button>
+          </div>
+          <p id="match-result" class="muted"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="exam">
+      <div class="section-head">
+        <p class="eyebrow">Exam mode</p>
+        <h2>Simulation devoir: score final + correction</h2>
+      </div>
+      <form id="owasp-quiz" class="quiz-grid">
+        <fieldset class="card quiz-q" data-answer="b">
+          <legend>1) SOP se base sur:</legend>
+          <label><input type="radio" name="q1" value="a"> Domaine seulement</label>
+          <label><input type="radio" name="q1" value="b"> Protocole + hote + port</label>
+          <label><input type="radio" name="q1" value="c"> IP serveur seulement</label>
+        </fieldset>
+        <fieldset class="card quiz-q" data-answer="c">
+          <legend>2) Defense prioritaire SQLi:</legend>
+          <label><input type="radio" name="q2" value="a"> Bloquer user-agent</label>
+          <label><input type="radio" name="q2" value="b"> Changer nom table</label>
+          <label><input type="radio" name="q2" value="c"> Requetes preparees</label>
+        </fieldset>
+        <fieldset class="card quiz-q" data-answer="a">
+          <legend>3) Session fixation:</legend>
+          <label><input type="radio" name="q3" value="a"> ID session force a la victime</label>
+          <label><input type="radio" name="q3" value="b"> Password reset via mail</label>
+          <label><input type="radio" name="q3" value="c"> Chiffrement DB</label>
+        </fieldset>
+        <fieldset class="card quiz-q" data-answer="b">
+          <legend>4) SSRF est surtout:</legend>
+          <label><input type="radio" name="q4" value="a"> XSS reflected</label>
+          <label><input type="radio" name="q4" value="b"> Server-side request abuse</label>
+          <label><input type="radio" name="q4" value="c"> CSRF banque</label>
+        </fieldset>
+        <fieldset class="card quiz-q" data-answer="c">
+          <legend>5) A09 se corrige avec:</legend>
+          <label><input type="radio" name="q5" value="a"> Desactiver logs</label>
+          <label><input type="radio" name="q5" value="b"> Logger mots de passe</label>
+          <label><input type="radio" name="q5" value="c"> Logs structures + alerting</label>
+        </fieldset>
+
+        <div class="quiz-actions card">
+          <button type="submit" class="btn">Corriger exam</button>
+          <button type="button" id="quiz-reset" class="btn btn-ghost">Reset exam</button>
+          <p id="quiz-result" class="score-big" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
+    <section class="container" id="megaquiz">
+      <div class="section-head">
+        <p class="eyebrow">Mega QCM Arena</p>
+        <h2>Beaucoup plus de QCM + correction detaillee question par question</h2>
+      </div>
+      <article class="card">
+        <div class="btn-row">
+          <button class="btn mega-start" type="button" data-mode="chap1">Start Chapitre 1 (10)</button>
+          <button class="btn mega-start" type="button" data-mode="chap2">Start Chapitre 2 (15)</button>
+          <button class="btn mega-start" type="button" data-mode="mix">Start Mix Hardcore (20)</button>
+        </div>
+        <p id="mega-meta" class="muted">Choisis un mode pour generer un nouveau set de questions.</p>
+      </article>
+
+      <form id="mega-form" class="mega-form"></form>
+      <article class="card">
+        <div class="btn-row">
+          <button id="mega-submit" class="btn" type="button">Corriger Mega QCM</button>
+          <button id="mega-reset" class="btn btn-ghost" type="button">Reset Mega QCM</button>
+        </div>
+        <p id="mega-result" class="score-big"></p>
+        <div id="mega-review" class="mega-review"></div>
+      </article>
+    </section>
+
+    <section class="container faq">
+      <div class="section-head">
+        <p class="eyebrow">FAQ revision</p>
+        <h2>Astuces pour prendre 20/20</h2>
+      </div>
+      <details class="card" open>
+        <summary>Comment memoriser vite le Top 10 ?</summary>
+        <p>Utilise la methode 3 passes: lecture simple -> flashcards -> quiz. Fais ca chaque jour 20-30 min.</p>
+      </details>
+      <details class="card">
+        <summary>Comment repondre proprement au devoir ?</summary>
+        <p>Pour chaque faille: definition, scenario reel, impact, prevention concrete (technique + process).</p>
+      </details>
+      <details class="card">
+        <summary>Si je bloque en exam ?</summary>
+        <p>Pense par categories: acces, crypto, injection, design, auth, integrite. Puis rattache symptome -> defense.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>développé par : TBINI Mustapha Amin</p>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>
+
