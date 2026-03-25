@@ -232,10 +232,30 @@ main section { padding: 2.2rem 0; }
   stroke-width: 1.4;
 }
 
+.diagram line {
+  stroke: color-mix(in srgb, var(--brand) 62%, #6da4ce);
+  stroke-width: 1.6;
+}
+
 .diagram text {
   fill: var(--text);
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Space Grotesk", sans-serif;
+}
+
+.diagram .node-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.diagram .edge-label {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.diagram .security-rail {
+  fill: color-mix(in srgb, var(--surface) 74%, #d6f3e9);
+  stroke: color-mix(in srgb, var(--brand) 66%, #4ea58f);
 }
 
 .score-label {
