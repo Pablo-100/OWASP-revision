@@ -187,11 +187,26 @@ main section { padding: 2.2rem 0; }
   background: color-mix(in srgb, var(--surface) 78%, #e8f2ff);
 }
 
-.logos-grid img {
+.logos-grid img,
+.logos-grid svg {
   width: 100%;
   max-width: 76px;
   height: 52px;
   object-fit: contain;
+}
+
+.logos-grid svg {
+  stroke: var(--brand);
+  fill: none;
+  stroke-width: 2.2;
+}
+
+.logos-grid svg text {
+  fill: var(--brand);
+  stroke: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .logos-grid figcaption {
