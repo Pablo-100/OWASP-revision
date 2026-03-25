@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -43,22 +43,37 @@
   <main>
     <section class="container logo-strip">
       <article class="card logos-card">
-        <h2>RepÃ¨res visuels rapides</h2>
+        <h2>Reperes visuels rapides</h2>
         <div class="logos-grid">
           <figure>
-            <img src="https://owasp.org/assets/images/logo.png" alt="OWASP Logo">
+            <svg viewBox="0 0 120 70" role="img" aria-label="OWASP logo icon">
+              <circle cx="25" cy="35" r="14"></circle>
+              <line x1="25" y1="21" x2="25" y2="49"></line>
+              <line x1="11" y1="35" x2="39" y2="35"></line>
+              <text x="52" y="41">OWASP</text>
+            </svg>
             <figcaption>OWASP</figcaption>
           </figure>
           <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/HTTP_logo.svg" alt="HTTP Logo">
+            <svg viewBox="0 0 120 70" role="img" aria-label="HTTP icon">
+              <rect x="10" y="18" width="100" height="34" rx="8"></rect>
+              <text x="60" y="41" text-anchor="middle">HTTP</text>
+            </svg>
             <figcaption>HTTP</figcaption>
           </figure>
           <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Lock-green.svg" alt="Security lock">
+            <svg viewBox="0 0 120 70" role="img" aria-label="Crypto lock icon">
+              <rect x="37" y="30" width="46" height="28" rx="6"></rect>
+              <path d="M47 30 v-6 a13 13 0 0 1 26 0 v6"></path>
+            </svg>
             <figcaption>Crypto</figcaption>
           </figure>
           <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/OOjs_UI_icon_alert.svg" alt="Alert icon">
+            <svg viewBox="0 0 120 70" role="img" aria-label="Alert icon">
+              <polygon points="60,14 103,58 17,58"></polygon>
+              <line x1="60" y1="30" x2="60" y2="46"></line>
+              <circle cx="60" cy="52" r="2.8"></circle>
+            </svg>
             <figcaption>Risk Alert</figcaption>
           </figure>
         </div>
@@ -138,18 +153,18 @@
       <article class="card tounsi-card">
         <h3>Tafsir b tounsi - Chapitre 1</h3>
         <p>
-          <strong>Bel simple:</strong> el navigateur w serveur y7kiw b HTTP. Kol request ÙÙŠÙ‡Ø§ infos (method, host, cookies).
+          <strong>Bel simple:</strong> el navigateur w serveur y7kiw b HTTP. Kol request fiha infos (method, host, cookies).
           Ken app ma ta3milch verification s7i7a, hacker ynajjem yetsarref fi system kifou kif user vrai.
         </p>
         <p>
           <strong>SOP ki guard:</strong> y9oul "site A ma ynajjemch y9ra data mta3 site B" ken ma famech nafs protocole+hote+port.
-          Houni tfhem 3leh XSS w CSRF Ø®Ø·ÙŠØ±ÙŠÙ† ÙƒÙŠ policy tetsed3.
+          Houni tfhem 3leh XSS w CSRF khatarin ki policy tetsed3.
         </p>
       </article>
 
       <article class="card diagram-card">
-        <h3>Diagramme - Cycle Request/Response expliquÃ©</h3>
-        <svg viewBox="0 0 980 220" role="img" aria-label="Cycle HTTP et contrÃ´le sÃ©curitÃ©">
+        <h3>Diagramme - Cycle Request/Response explique</h3>
+        <svg viewBox="0 0 980 220" role="img" aria-label="Cycle HTTP et controle securite">
           <defs>
             <marker id="arr1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
               <polygon points="0 0, 10 4, 0 8" fill="currentColor"></polygon>
@@ -302,8 +317,8 @@
       <article class="card tounsi-card">
         <h3>Tafsir b tounsi - Chapitre 2 (Top 10)</h3>
         <p>
-          <strong>Fekra kbira:</strong> kol faille fi Top 10 Ù‡ÙŠ Ø¨Ø§Ø¨. Attaquant ylawwej 3la ashel beb:
-          access control m3awaj, input validation Ø¶Ø¹ÙŠÙØ©, ÙˆÙ„Ø§ config khayba.
+          <strong>Fekra kbira:</strong> kol faille fi Top 10 hiya beb. Attaquant ylawwej 3la ashel beb:
+          access control m3awaj, input validation d3ifa, wala config khayba.
         </p>
         <p>
           <strong>Rule dhahbiya:</strong> "ma tethi9 fi hata input", "a3mel least privilege",
@@ -512,4 +527,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
