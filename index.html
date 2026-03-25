@@ -164,23 +164,38 @@
 
       <article class="card diagram-card">
         <h3>Diagramme - Cycle Request/Response explique</h3>
-        <svg viewBox="0 0 980 220" role="img" aria-label="Cycle HTTP et controle securite">
+        <svg viewBox="0 0 980 260" role="img" aria-label="Cycle HTTP et controles de securite en pipeline">
           <defs>
             <marker id="arr1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
               <polygon points="0 0, 10 4, 0 8" fill="currentColor"></polygon>
             </marker>
           </defs>
           <g class="diagram">
-            <rect x="30" y="45" width="170" height="60" rx="12"></rect>
-            <text x="115" y="80" text-anchor="middle">Client Browser</text>
-            <line x1="200" y1="75" x2="300" y2="75" marker-end="url(#arr1)"></line>
-            <rect x="300" y="45" width="180" height="60" rx="12"></rect>
-            <text x="390" y="80" text-anchor="middle">Web App</text>
-            <line x1="480" y1="75" x2="580" y2="75" marker-end="url(#arr1)"></line>
-            <rect x="580" y="45" width="180" height="60" rx="12"></rect>
-            <text x="670" y="80" text-anchor="middle">Database</text>
-            <rect x="300" y="135" width="280" height="55" rx="12"></rect>
-            <text x="440" y="167" text-anchor="middle">Security checks: auth + validation + logging</text>
+            <rect x="30" y="42" width="190" height="74" rx="14"></rect>
+            <text x="48" y="72" class="node-title">1. Client</text>
+            <text x="48" y="94">Browser envoie une requete HTTP</text>
+
+            <line x1="220" y1="79" x2="340" y2="79" marker-end="url(#arr1)"></line>
+            <text x="252" y="64" class="edge-label">GET/POST + headers + cookie</text>
+
+            <rect x="340" y="42" width="220" height="74" rx="14"></rect>
+            <text x="358" y="72" class="node-title">2. Web App</text>
+            <text x="358" y="94">Controller + logique metier</text>
+
+            <line x1="560" y1="79" x2="690" y2="79" marker-end="url(#arr1)"></line>
+            <text x="592" y="64" class="edge-label">Query parametree</text>
+
+            <rect x="690" y="42" width="250" height="74" rx="14"></rect>
+            <text x="708" y="72" class="node-title">3. Data Layer</text>
+            <text x="708" y="94">DB lit/ecrit uniquement si autorise</text>
+
+            <line x1="690" y1="122" x2="560" y2="122" marker-end="url(#arr1)"></line>
+            <line x1="340" y1="122" x2="220" y2="122" marker-end="url(#arr1)"></line>
+            <text x="368" y="141" class="edge-label">Response JSON/HTML + code HTTP</text>
+
+            <rect x="150" y="168" width="680" height="64" rx="14" class="security-rail"></rect>
+            <text x="180" y="196" class="node-title">Pipeline securite applique a chaque etape</text>
+            <text x="180" y="218">AuthN/AuthZ | validation input | output encoding | logging + alerting</text>
           </g>
         </svg>
       </article>
@@ -329,28 +344,42 @@
 
       <article class="card diagram-card">
         <h3>Diagramme - OWASP Top 10 Mind Map</h3>
-        <svg viewBox="0 0 980 280" role="img" aria-label="Mind map OWASP Top 10">
+        <svg viewBox="0 0 980 340" role="img" aria-label="Carte OWASP Top 10 par categories">
           <g class="diagram">
-            <rect x="395" y="110" width="190" height="60" rx="14"></rect>
-            <text x="490" y="146" text-anchor="middle">OWASP Top 10</text>
+            <rect x="392" y="130" width="196" height="78" rx="16"></rect>
+            <text x="490" y="164" text-anchor="middle" class="node-title">OWASP Top 10 (2021)</text>
+            <text x="490" y="186" text-anchor="middle">Vue regroupee par themes</text>
 
-            <rect x="90" y="35" width="170" height="45" rx="10"></rect>
-            <text x="175" y="63" text-anchor="middle">A01 Access</text>
-            <rect x="300" y="20" width="170" height="45" rx="10"></rect>
-            <text x="385" y="48" text-anchor="middle">A02 Crypto</text>
-            <rect x="510" y="20" width="170" height="45" rx="10"></rect>
-            <text x="595" y="48" text-anchor="middle">A03 Injection</text>
-            <rect x="720" y="35" width="170" height="45" rx="10"></rect>
-            <text x="805" y="63" text-anchor="middle">A04 Design</text>
+            <line x1="392" y1="150" x2="252" y2="85"></line>
+            <line x1="392" y1="168" x2="252" y2="170"></line>
+            <line x1="392" y1="190" x2="252" y2="255"></line>
+            <line x1="588" y1="150" x2="728" y2="85"></line>
+            <line x1="588" y1="168" x2="728" y2="170"></line>
+            <line x1="588" y1="190" x2="728" y2="255"></line>
 
-            <rect x="90" y="205" width="170" height="45" rx="10"></rect>
-            <text x="175" y="233" text-anchor="middle">A05 Config</text>
-            <rect x="300" y="220" width="170" height="45" rx="10"></rect>
-            <text x="385" y="248" text-anchor="middle">A06 Components</text>
-            <rect x="510" y="220" width="170" height="45" rx="10"></rect>
-            <text x="595" y="248" text-anchor="middle">A07 Auth</text>
-            <rect x="720" y="205" width="170" height="45" rx="10"></rect>
-            <text x="805" y="233" text-anchor="middle">A08/A09/A10</text>
+            <rect x="62" y="48" width="190" height="70" rx="12"></rect>
+            <text x="82" y="76" class="node-title">Acces</text>
+            <text x="82" y="98">A01 Broken Access Control</text>
+
+            <rect x="62" y="133" width="190" height="70" rx="12"></rect>
+            <text x="82" y="161" class="node-title">Crypto + Injection</text>
+            <text x="82" y="183">A02 | A03</text>
+
+            <rect x="62" y="218" width="190" height="70" rx="12"></rect>
+            <text x="82" y="246" class="node-title">Design + Config</text>
+            <text x="82" y="268">A04 | A05</text>
+
+            <rect x="728" y="48" width="190" height="70" rx="12"></rect>
+            <text x="748" y="76" class="node-title">Components</text>
+            <text x="748" y="98">A06 Vulnerable Components</text>
+
+            <rect x="728" y="133" width="190" height="70" rx="12"></rect>
+            <text x="748" y="161" class="node-title">Auth</text>
+            <text x="748" y="183">A07 Auth Failures</text>
+
+            <rect x="728" y="218" width="190" height="70" rx="12"></rect>
+            <text x="748" y="246" class="node-title">Integrite + Detection</text>
+            <text x="748" y="268">A08 | A09 | A10</text>
           </g>
         </svg>
       </article>
